@@ -6,7 +6,7 @@ even in ever-green browsers. Anyway, it inspired me on writing a little library 
 
 As soon as you load it on the page
 ```
-<script async src="./dist/html-import.min.js"></script>
+<script async src="./dist/html-import.es5.js"></script>
 ```
 
 The library subscribes for DOM-ready event and processes the DOm the directives like that:

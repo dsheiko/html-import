@@ -20,7 +20,7 @@
         // Browser globals (root is window)
         root.HTMLImport = factory();
   }
-}( this, function () {
+}( window, function () {
 
     const IMPORT_SELECTOR = "link[rel=html-import]";
 
