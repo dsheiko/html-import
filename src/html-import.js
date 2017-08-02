@@ -18,7 +18,7 @@
         module.exports = factory();
     } else {
         // Browser globals (root is window)
-        root.HMTLImport = factory();
+        root.HTMLImport = factory();
   }
 }( this, function () {
 
