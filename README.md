@@ -39,7 +39,7 @@ npm start
 
 ## API
 
-The library bundled as UMD meaning you access it as AMD (RequireJS) modules, as CommonJS module or in global variable `htmlImport`
+The library bundled as UMD meaning you access it as AMD (RequireJS) modules, as CommonJS module or in global variable `HMTLImport.
 
 ### "html-imports-loaded" DOM event
 It is fired when HTML Import finishes DOM processing (one started by its own on DOM ready event)
@@ -51,14 +51,14 @@ It is fired when HTML Import finishes DOM processing (one started by its own on 
   </script>
 ```
 
-### htmlImport.import()
+### HMTLImport.import()
 Can be used to start manually processing the DOM
 ```
 @returns {Promise}
 ```
 
 
-### htmlImport.importForElements( arr )
+### HMTLImport.importForElements( arr )
 Processes the elements of given array
 ```
 @param {Node[]} imports
