@@ -9,14 +9,14 @@ As soon as you load it on the page
 <script async src="./src/html-import.js"></script>
 ```
 
-The library subscribes for DOM-ready event and processes the DOm the directives like that:
+The library subscribes for DOM-ready event and processes the DOM the directives like that:
 
 #### index.html
 ```
 <link rel="html-import" href="./some-path/block.html" >
 ```
 
-When any encountered it loads the HTML file specified in `href` attribute and replaces the directive with the loaded HTML.
+When any encountered it loads the HTML file specified in `href` attribute and **replaces the directive with the loaded HTML**.
 If it finds any imports in the loaded HTML it processes it recursively
 
 #### ./some-path/block.html
