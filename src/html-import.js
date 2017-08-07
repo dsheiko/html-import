@@ -64,8 +64,11 @@
           .then( response => response.text() )
           .then( processHtmlString )
           .then(( html ) => {
+            if ( !el.parentNode ) {
+              return;
+            }
             el.insertAdjacentHTML( "beforebegin", html.repeat( repeat ) );
-            el.parentNode && el.parentNode.removeChild( el );
+            el.parentNode.removeChild( el );
             return url;
           });
       }

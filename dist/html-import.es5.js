@@ -82,8 +82,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return fetch(url).then(function (response) {
           return response.text();
         }).then(processHtmlString).then(function (html) {
+          if (!el.parentNode) {
+            return;
+          }
           el.insertAdjacentHTML("beforebegin", html.repeat(repeat));
-          el.parentNode && el.parentNode.removeChild(el);
+          el.parentNode.removeChild(el);
           return url;
         });
       }
