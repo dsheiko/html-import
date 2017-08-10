@@ -57,7 +57,7 @@
        */
       importForElement( el ) {
         const url = el.getAttribute( "href" ),
-              repeat = parseInt( el.getAttribute( "repeat" ), 10 ) || 1,
+              repeat = parseInt( el.getAttribute( "repeat" ) || 1, 10 ),
               processHtmlString = this.processHtmlString.bind( this );
 
         return fetch( url )
