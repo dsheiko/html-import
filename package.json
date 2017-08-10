@@ -19,6 +19,7 @@
     "http-server": "^0.10.0"
   },
   "dependencies": {
+    "mdn-polyfills": "^5.0.0",
     "promise-polyfill": "6.0.2",
     "whatwg-fetch": "^2.0.3"
   }
