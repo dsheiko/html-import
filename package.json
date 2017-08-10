@@ -21,6 +21,7 @@
   "dependencies": {
     "mdn-polyfills": "^5.0.0",
     "promise-polyfill": "6.0.2",
+    "string.prototype.repeat": "^0.2.0",
     "whatwg-fetch": "^2.0.3"
   }
 }
