@@ -9,6 +9,8 @@ As soon as you load it on the page
 <script async src="./src/html-import.js"></script>
 ```
 
+If you intend to use the library with legacy browsers examine `legacy.html` that contains all the required polifills.
+
 The library subscribes for DOM-ready event and processes the DOM the directives like that:
 
 #### index.html
