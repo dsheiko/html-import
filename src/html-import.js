@@ -105,5 +105,19 @@
           });
     });
 
+    /**
+    * Load JavaScript - utility that is handy to used in conjuction with the tool
+    * @param {string} url
+    * @returns {Promise}
+    */
+    importer.loadJs = ( url ) => {
+      return new Promise( resolve => {
+        const script = document.createElement( "script" );
+        script.src = url;
+        script.onload = resolve;
+        document.head.appendChild( script );
+      });
+    };
+
     return importer;
 }));

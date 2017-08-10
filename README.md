@@ -64,3 +64,23 @@ Processes the elements of given array
 @param {Node[]} imports
 @returns {Promise}
 ```
+
+
+### HTMLImport.loadJs( scriptPath )
+Loads JavaScript
+```
+@param {string} scriptPath
+@returns {Promise}
+```
+Example:
+```
+ <script>
+    document.addEventListener( "html-imports-loaded", ( e ) => {
+      e.detail.urls.forEach( url => console.log( `Loaded ${url}` ) );
+      HTMLImport.loadJs( "/assets/js/backbone/backbone.min.js" )
+        .then(() => console.log( "Loaded /assets/js/backbone/backbone.min.js" ) )
+        .then(() => HTMLImport.loadJs( "/assets/js/app.js" ) )
+        .then(() => console.log( "Loaded /assets/js/app.js" ) );
+    });
+  </script>
+```

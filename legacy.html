@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML Import Demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="./node_modules/promise-polyfill/promise.min.js"></script>
+    <script src="./node_modules/whatwg-fetch/fetch.js"></script>
+
+    <script src="./dist/html-import.es5.js"></script>
+
+  </head>
+  <body>
+    <div class="container">
+
+      <h4>Import a single HTML file</h4>
+      <link rel="html-import" href="import-foo.html" >
+      <h4>Repeat importing Nth times</h4>
+      <link rel="html-import" href="import-bar.html" repeat="3">
+
+    </div>
+
+  </body>
+</html>
