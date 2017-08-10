@@ -76,7 +76,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       key: "importForElement",
       value: function importForElement(el) {
         var url = el.getAttribute("href"),
-            repeat = parseInt(el.getAttribute("repeat"), 10) || 1,
+            repeat = parseInt(el.getAttribute("repeat") || 1, 10),
             processHtmlString = this.processHtmlString.bind(this);
 
         return fetch(url).then(function (response) {
@@ -130,6 +130,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       document.dispatchEvent(event);
     });
   });
+
+  /**
+  * Load JavaScript - utility that is handy to used in conjuction with the tool
+  * @param {string} url
+  * @returns {Promise}
+  */
+  importer.loadJs = function (url) {
+    return new Promise(function (resolve) {
+      var script = document.createElement("script");
+      script.src = url;
+      script.onload = resolve;
+      document.head.appendChild(script);
+    });
+  };
 
   return importer;
 });
