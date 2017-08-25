@@ -1,5 +1,7 @@
 # HTML Import
 
+[![NPM](https://nodei.co/npm/nw-autoupdater.png)](https://nodei.co/npm/html-import/)
+
 Sometimes when working on a big HTML we need to split it in blocks.
 For example I have a file structure where every folder represents a component keeping its HTML and assets. In the landing page of style guide I would like to include all the components. Well, in CSS we can import a module with `@import`, in JavaScript we can use `import`. In the past we applied Apache Server-Side Includes for importing HTML blocks. Now we can think of [HTML Imports](https://www.html5rocks.com/en/tutorials/webcomponents/imports/), but they are not yet really supported
 even in ever-green browsers. Anyway, it inspired me on writing a little library that implements a similar approach.
