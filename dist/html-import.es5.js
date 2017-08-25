@@ -123,10 +123,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   }();
 
   var importer = new HtmlImport();
+  /**
+   * CustomEvent with support for IE (9+)
+   * @param {string} type
+   * @param {Object} detail
+   * @returns {object}
+   */
+  function createCustomEvent(type, detail) {
+    try {
+      return new CustomEvent(type, { detail: detail });
+    } catch (e) {
+      var e = document.createEvent("CustomEvent");
+      e.initCustomEvent(type, false, false, { detail: detail });
+      return e;
+    }
+  }
 
   onDOMReady(function () {
     importer.import().then(function (urls) {
-      var event = new CustomEvent("html-imports-loaded", { detail: { urls: urls } });
+      var event = createCustomEvent("html-imports-loaded", { urls: urls });
       document.dispatchEvent(event);
     });
   });

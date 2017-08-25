@@ -96,11 +96,26 @@
     }
 
     const importer = new HtmlImport();
+    /**
+     * CustomEvent with support for IE (9+)
+     * @param {string} type
+     * @param {Object} detail
+     * @returns {object}
+     */
+    function createCustomEvent( type, detail ) {
+      try {
+        return new CustomEvent( type, { detail: detail } );
+      } catch( e ) {
+        const ev = document.createEvent( "CustomEvent" );
+        ev.initCustomEvent( type, false, false, { detail: detail });
+        return ev;
+      }
+    }
 
     onDOMReady(() => {
       importer.import()
         .then(( urls ) => {
-            const event = new CustomEvent( "html-imports-loaded", { detail: { urls } } );
+            const event = createCustomEvent( "html-imports-loaded", { urls } );
             document.dispatchEvent( event );
           });
     });
