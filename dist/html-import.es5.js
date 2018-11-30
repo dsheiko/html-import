@@ -133,9 +133,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     try {
       return new CustomEvent(type, { detail: detail });
     } catch (e) {
-      var e = document.createEvent("CustomEvent");
-      e.initCustomEvent(type, false, false, { detail: detail });
-      return e;
+      var ev = document.createEvent("CustomEvent");
+      ev.initCustomEvent(type, false, false, { detail: detail });
+      return ev;
     }
   }
 
